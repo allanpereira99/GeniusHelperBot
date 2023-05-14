@@ -4,7 +4,7 @@ function decode(PathOrFileDescriptor: string): string {
     const path: string = PathOrFileDescriptor.toString();
     const buffer = fs.readFileSync(path);
     const token = buffer.toString("utf8");
-    return token;
+    return token.trim();
   } catch (error) {
     throw new Error("Invalid Secret Token!");
   }
